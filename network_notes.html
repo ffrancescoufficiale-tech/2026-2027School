@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appunti di Reti e Telecomunicazioni | Forgs-IT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        dark: { 950: '#030712', 900: '#0b0f19', 800: '#111827', 700: '#1f2937' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-tr from-indigo-600 to-violet-500 text-white p-2 rounded-xl font-extrabold text-lg tracking-wider shadow-lg shadow-indigo-500/20">
+                        F/IT
+                    </div>
+                    <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                        Forgs-IT
+                    </span>
+                </div>
+                <div>
+                    <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold px-4 py-2 rounded-xl transition-all border border-slate-700">
+                        &larr; Torna alla Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenuto Articolo -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+        
+        <!-- Intestazione Articolo -->
+        <header class="space-y-4 border-b border-slate-800 pb-8">
+            <div class="flex items-center gap-2">
+                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-semibold px-3 py-1 rounded-full border border-indigo-500/20">Sistemi e Reti</span>
+                <span class="text-slate-500 text-xs">Lezioni dopo le vacanze</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                Architetture di Rete, Protocolli e Modelli OSI / TCP-IP
+            </h1>
+            <p class="text-slate-400 text-lg">
+                Raccolta completa degli appunti tradotti in italiano: dai tipi di ambienti di rete fino all'indirizzamento IP e al subnetting.
+            </p>
+        </header>
+
+        <!-- Sezione 1: Ambienti di rete -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                <span>🌐</span> 1. Rodzaje środowisk sieciowych (Tipi di ambienti di rete)
+            </h2>
+            <div class="space-y-4 text-slate-300 leading-relaxed">
+                <p><strong>Cliente:</strong> Un dispositivo che usufruisce di un servizio messo a disposizione da un server.</p>
+                <p><strong>Server:</strong> Un computer che condivide risorse o servizi all'interno della rete.</p>
+                
+                <div class="space-y-3 pt-2">
+                    <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
+                        <h3 class="font-semibold text-white mb-1">Architettura Paritetica (Peer-to-Peer)</h3>
+                        <p class="text-sm text-slate-400">Ogni utente può contemporaneamente condividere le risorse del proprio computer e usufruire di quelle degli altri computer. Tutti i dispositivi nella rete hanno lo stesso status: nessuno è subordinato a un altro. L'utente gestisce autonomamente il proprio computer e si occupa dell'accesso degli altri utenti alle proprie risorse. Viene utilizzata nelle reti di piccole dimensioni.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
+                        <h3 class="font-semibold text-white mb-1">Architettura Client-Server</h3>
+                        <p class="text-sm text-slate-400">Esiste uno o più computer che svolgono esclusivamente la funzione di server. Sul server è installato un sistema operativo di rete che consente di eseguire i compiti del server. Il server archivia e condivide risorse (es. file) e gestisce la condivisione delle stampanti. La stazione di lavoro, che funge da client, comunica con il server utilizzando il software client di rete.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione 2: Comunicazione in rete -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                <span>⚡</span> 2. Komunikacja w sieci (Comunicazione in rete)
+            </h2>
+            <ul class="space-y-3 text-slate-300">
+                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>1. Protocollo di comunicazione:</strong> Insieme di regole e norme che i dispositivi comunicanti devono rispettare.</li>
+                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>2. Modalità connessione (Connection-oriented):</strong> Consiste nello stabilire una connessione logica tra due dispositivi comunicanti. Si utilizza quando è necessario trasmettere molti messaggi in entrambe le direzioni.</li>
+                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>3. Modalità senza connessione (Connectionless):</strong> I messaggi vengono trasmessi indipendentemente (es. invio di un'email). Per ricevere i messaggi, i dispositivi non devono essere necessariamente online.</li>
+                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>4. Unicast (Trasmissione unitaria):</strong> Un singolo dispositivo invia dati a esattamente un altro dispositivo.</li>
+                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>5. Broadcast (Modalità di broadcast):</strong> I dati inviati dal mittente raggiungono molti dispositivi, ma vengono ricevuti ed elaborati solo dal dispositivo il cui indirizzo corrisponde a quello di destinazione; gli altri dispositivi ignorano i dati non destinati a loro.</li>
+                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>6. Multicast (Broadcast di gruppo):</strong> I dati sono destinati esclusivamente a un gruppo selezionato di dispositivi. L'indirizzo di destinazione è speciale e identifica un gruppo specifico nella rete, evitando l'invio multiplo dello stesso messaggio.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-white pt-4">Tipologie di trasmissione per direzione:</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
+                    <h4 class="font-bold text-indigo-400 mb-1">Simplex (Monodirezionale)</h4>
+                    <p class="text-xs text-slate-400">Il ricevitore non può inviare risposte o altri dati (es. trasmissione radiofonica).</p>
+                </div>
+                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
+                    <h4 class="font-bold text-indigo-400 mb-1">Half-Duplex (Bidirezionale alternata)</h4>
+                    <p class="text-xs text-slate-400">In ogni momento è stabilita una sola direzione di trasmissione. Richiede un sistema di segnalazione (es. Radio CB).</p>
+                </div>
+                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
+                    <h4 class="font-bold text-indigo-400 mb-1">Full-Duplex (Bidirezionale simultanea)</h4>
+                    <p class="text-xs text-slate-400">I dati viaggiano in entrambe le direzioni contemporaneamente (es. conversazione telefonica).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione 3: Modelli ISO/OSI e TCP/IP -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                <span>📚</span> 3. Modele warstwowe w sieci (Modelli a strati)
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-5 bg-dark-900/60 rounded-xl border border-slate-800 space-y-3">
+                    <h3 class="font-bold text-white text-lg">Modello ISO/OSI (7 Strati)</h3>
+                    <ul class="space-y-1 text-sm text-slate-300">
+                        <li>7. <strong>Applicazione</strong> (Servizi finali, browser, client email)</li>
+                        <li>6. <strong>Presentazione</strong> (Standardizzazione, compressione, crittografia)</li>
+                        <li>5. <strong>Sessione</strong> (Gestione della comunicazione e ripristino connessione)</li>
+                        <li>4. <strong>Trasporto</strong> (Segmentazione, affidabilità, ritrasmissione)</li>
+                        <li>3. <strong>Rete</strong> (Indirizzamento logico IP e routing dei pacchetti)</li>
+                        <li>2. <strong>Collegamento dati</strong> (Framing, controllo errori CRC, indirizzi MAC. Diviso in LLC e MAC)</li>
+                        <li>1. <strong>Fisico</strong> (Trasmissione bit su cavo o onde radio)</li>
+                    </ul>
+                </div>
+
+                <div class="p-5 bg-dark-900/60 rounded-xl border border-slate-800 space-y-3">
+                    <h3 class="font-bold text-white text-lg">Modello TCP/IP (4 Strati)</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>1. <strong>Applicazione</strong> (Accoglie funzioni di Applicazione, Presentazione e Sessione OSI)</li>
+                        <li>2. <strong>Trasporto</strong> (TCP / UDP)</li>
+                        <li>3. <strong>Internet</strong> (Protokół IP, ICMP)</li>
+                        <li>4. <strong>Accesso alla rete</strong> (Gestione hardware e collegamenti fisici)</li>
+                    </ul>
+                    <p class="text-xs text-slate-400 pt-2">Nota: La suddivisione dei dati in unità e l'aggiunta di intestazioni si chiama <strong>Incapsulamento</strong>, mentre il processo inverso è la <strong>Decapsulamento</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione 4: Struttura della ramka (Frame Ethernet) -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                <span>📦</span> 4. Budowa ramki Ethernet
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-300 border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-indigo-300">
+                            <th class="p-3">Nome campo</th>
+                            <th class="p-3">Dimensione (Byte)</th>
+                            <th class="p-3">Descrizione</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800">
+                        <tr><td class="p-3 font-medium">Preambolo</td><td class="p-3">7</td><td class="p-3 text-slate-400">Alternanza di 1 e 0 per la sincronizzazione dei ricevitori.</td></tr>
+                        <tr><td class="p-3 font-medium">SFD (Start Frame Delimiter)</td><td class="p-3">1</td><td class="p-3 text-slate-400">Segna l'inizio effettivo del frame.</td></tr>
+                        <tr><td class="p-3 font-medium">MAC Destinazione</td><td class="p-3">6</td><td class="p-3 text-slate-400">Indirizzo fisico del ricevente.</td></tr>
+                        <tr><td class="p-3 font-medium">MAC Mittente</td><td class="p-3">6</td><td class="p-3 text-slate-400">Indirizzo fisico del mittente.</td></tr>
+                        <tr><td class="p-3 font-medium">Tipo / Lunghezza</td><td class="p-3">2</td><td class="p-3 text-slate-400">&lt; 1500 indica la lunghezza; &gt; 1500 indica il tipo di pacchetto.</td></tr>
+                        <tr><td class="p-3 font-medium">Dati e Riempimento</td><td class="p-3">46 - 1500</td><td class="p-3 text-slate-400">Payload utile (se &lt; 46B viene riempito di zeri).</td></tr>
+                        <tr><td class="p-3 font-medium">FCS (Suma kontrolna)</td><td class="p-3">4</td><td class="p-3 text-slate-400">Controllo degli errori di trasmissione.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sezione 5: Cablaggio e Standard TIA/EIA -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                <span>🔌</span> 5. Standard TIA/EIA 568 e Cablaggio
+            </h2>
+            <p class="text-slate-300">Il medium più popolare è la coppia intrecciata (skrętka). La sequenza dei cavi nei connettori segue gli standard:</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
+                    <h3 class="font-bold text-indigo-400 mb-2">TIA/EIA 568A</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-300 space-y-1">
+                        <li>Bianco-Verde</li>
+                        <li>Verde</li>
+                        <li>Bianco-Arancione</li>
+                        <li>Blu</li>
+                        <li>Bianco-Blu</li>
+                        <li>Arancione</li>
+                        <li>Bianco-Marrone</li>
+                        <li>Marrone</li>
+                    </ol>
+                </div>
+                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
+                    <h3 class="font-bold text-indigo-400 mb-2">TIA/EIA 568B</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-300 space-y-1">
+                        <li>Bianco-Arancione</li>
+                        <li>Arancione</li>
+                        <li>Bianco-Verde</li>
+                        <li>Blu</li>
+                        <li>Bianco-Blu</li>
+                        <li>Verde</li>
+                        <li>Bianco-Marrone</li>
+                        <li>Marrone</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="space-y-3 pt-2 text-slate-300">
+                <p><strong>Cavo Diretto (Prosty):</strong> Entrambe le estremità seguono lo stesso standard. Usato per collegare dispositivi di tipo diverso.</p>
+                <p><strong>Cavo Krosowany (Crossover):</strong> Un'estremità usa 568A e l'altra 568B. Usato per collegare dispositivi dello stesso tipo.</p>
+                <p class="text-sm text-slate-400"><em>Nota:</em> La maggior parte dei dispositivi moderni supporta la funzione <strong>Auto MDI/MDIX</strong>, che riconosce automaticamente il tipo di cavo collegato.</p>
+            </div>
+        </section>
+
+        <!-- Sezione 6: Indirizzamento IP e Subnetting -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                <span>🔢</span> 6. Adresowanie IP & Podsieci (Subnetting)
+            </h2>
+            <div class="space-y-4 text-slate-300">
+                <p><strong>Esempio di calcolo host:</strong> 192.168.0.1 /24</p>
+                <ul class="list-disc list-inside text-sm space-y-2 text-slate-400">
+                    <li>Numero di host = $2^{32-\text{MASKA}} - 2 \rightarrow 2^{32-24} - 2 = 2^8 - 2 = 254$ host utilizzabili.</li>
+                    <li>Indirizzo di Rete = Indirizzo IP AND Maschera</li>
+                    <li>Indirizzo Broadcast = Indirizzo di Rete + Inverso della Maschera (es. 192.168.0.255)</li>
+                    <li>Primo host utile = Indirizzo di rete + 1 (192.168.0.1)</li>
+                    <li>Ultimo host utile = Indirizzo broadcast - 1 (192.168.0.254)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sezione 7: Protocolli -->
+        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
+                <span>⚙️</span> 7. Protokoły (Protocolli di Livello Applicativo e Rete)
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>FTP:</strong> Trasferimento file</div>
+                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>HTTP:</strong> Download pagine Web</div>
+                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>SMTP:</strong> Invio email</div>
+                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>POP3 / IMAP:</strong> Ricezione email</div>
+                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>DNS:</strong> Risoluzione nomi domini in IP</div>
+                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>TFTP:</strong> Versione FTP semplificata (es. boot di rete)</div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-white pt-4">Protocolli di Rete e Routing:</h3>
+            <div class="space-y-3 text-sm text-slate-300">
+                <p><strong>IP (Internet Protocol):</strong> Protocollo senza connessione e non affidabile per il trasporto dei pacchetti.</p>
+                <p><strong>TTL (Time To Live):</strong> Campo del pacchetto IP che diminuisce di 1 ad ogni passaggio per ogni router; se arriva a 0, il pacchetto viene scartato (max 255 router).</p>
+                <p><strong>RIP & OSPF:</strong> Protocolli di routing per il calcolo delle rotte ottimali all'interno della rete.</p>
+                <p><strong>ICMP:</strong> Utilizzato per la diagnostica di rete tramite i comandi <strong>PING</strong> e <strong>TRACERT</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Footer dell'articolo -->
+        <div class="pt-8 border-t border-slate-800 flex justify-between items-center">
+            <a href="index.html" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold transition-colors">
+                &larr; Torna alla Home e agli altri articoli
+            </a>
+            <span class="text-xs text-slate-500">Forgs-IT Hub Didattico</span>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-slate-800/80 mt-20 py-8 px-4 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Forgs-IT Hub. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>
