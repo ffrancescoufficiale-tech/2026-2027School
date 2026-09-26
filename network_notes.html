@@ -1,284 +1,242 @@
-<!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appunti di Reti e Telecomunicazioni | Forgs-IT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        dark: { 950: '#030712', 900: '#0b0f19', 800: '#111827', 700: '#1f2937' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass-card {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-    </style>
-</head>
-<body class="bg-dark-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white">
-
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-gradient-to-tr from-indigo-600 to-violet-500 text-white p-2 rounded-xl font-extrabold text-lg tracking-wider shadow-lg shadow-indigo-500/20">
-                        F/IT
-                    </div>
-                    <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                        Forgs-IT
-                    </span>
-                </div>
-                <div>
-                    <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold px-4 py-2 rounded-xl transition-all border border-slate-700">
-                        &larr; Torna alla Home
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Contenuto Articolo -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+- Rodzaje środowisk sieciowych
+    - Rodzaje środowisk sieciowych(klient-serwer i peer-to-peer)
         
-        <!-- Intestazione Articolo -->
-        <header class="space-y-4 border-b border-slate-800 pb-8">
-            <div class="flex items-center gap-2">
-                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-semibold px-3 py-1 rounded-full border border-indigo-500/20">Sistemi e Reti</span>
-                <span class="text-slate-500 text-xs">Lezioni dopo le vacanze</span>
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-                Architetture di Rete, Protocolli e Modelli OSI / TCP-IP
-            </h1>
-            <p class="text-slate-400 text-lg">
-                Raccolta completa degli appunti tradotti in italiano: dai tipi di ambienti di rete fino all'indirizzamento IP e al subnetting.
-            </p>
-        </header>
-
-        <!-- Sezione 1: Ambienti di rete -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                <span>🌐</span> Tipologie di Ambienti di Rete
-            </h2>
-            <div class="space-y-4 text-slate-300 leading-relaxed">
-                <p><strong>Client:</strong> Un dispositivo che usufruisce di un servizio messo a disposizione da un server.</p>
-                <p><strong>Server:</strong> Un computer che condivide risorse o servizi all'interno della rete.</p>
-                
-                <div class="space-y-3 pt-2">
-                    <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
-                        <h3 class="font-semibold text-white mb-1">Architettura Paritetica (Peer-to-Peer)</h3>
-                        <p class="text-sm text-slate-400">Ogni utente può contemporaneamente condividere le risorse del proprio computer e usufruire di quelle degli altri computer. Tutti i dispositivi nella rete hanno lo stesso status: nessuno è subordinato a un altro. L'utente gestisce autonomamente il proprio computer e si occupa dell'accesso degli altri utenti alle proprie risorse. Viene utilizzata nelle reti di piccole dimensioni.</p>
-                    </div>
-
-                    <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
-                        <h3 class="font-semibold text-white mb-1">Architettura Client-Server</h3>
-                        <p class="text-sm text-slate-400">Esiste uno o più computer che svolgono esclusivamente la funzione di server. Sul server è installato un sistema operativo di rete che consente di eseguire i compiti del server. Il server archivia e condivide risorse (es. file) e gestisce la condivisione delle stampanti. La stazione di lavoro, che funge da client, comunica con il server utilizzando il software client di rete.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sezione 2: Comunicazione in rete -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                <span>⚡</span> Comunicazione in Rete
-            </h2>
-            <ul class="space-y-3 text-slate-300">
-                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>1. Protocollo di comunicazione:</strong> Insieme di regole e norme che i dispositivi comunicanti devono rispettare.</li>
-                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>2. Modalità connessione (Connection-oriented):</strong> Consiste nello stabilire una connessione logica tra due dispositivi comunicanti. Si utilizza quando è necessario trasmettere molti messaggi in entrambe le direzioni.</li>
-                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>3. Modalità senza connessione (Connectionless):</strong> I messaggi vengono trasmessi indipendentemente (es. invio di un'email). Per ricevere i messaggi, i dispositivi non devono essere necessariamente online.</li>
-                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>4. Unicast (Trasmissione unitaria):</strong> Un singolo dispositivo invia dati a esattamente un altro dispositivo.</li>
-                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>5. Broadcast (Modalità di rozgłoszeniowy / rozgłoszenie):</strong> I dati inviati dal mittente raggiungono molti dispositivi, ma vengono ricevuti ed elaborati solo dal dispositivo il cui indirizzo corrisponde a quello di destinazione; gli altri dispositivi ignorano i dati non destinati a loro.</li>
-                <li class="p-3 bg-dark-900/40 rounded-lg"><strong>6. Multicast (Broadcast di gruppo):</strong> I dati sono destinati esclusivamente a un gruppo selezionato di dispositivi. L'indirizzo di destinazione è speciale e identifica un gruppo specifico nella rete, evitando l'invio multiplo dello stesso messaggio.</li>
-            </ul>
-
-            <h3 class="text-xl font-semibold text-white pt-4">Tipologie di trasmissione per direzione:</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
-                    <h4 class="font-bold text-indigo-400 mb-1">Simplex (Monodirezionale)</h4>
-                    <p class="text-xs text-slate-400">Il ricevitore non può inviare risposte o altri dati (es. trasmissione radiofonica).</p>
-                </div>
-                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
-                    <h4 class="font-bold text-indigo-400 mb-1">Half-Duplex (Bidirezionale alternata)</h4>
-                    <p class="text-xs text-slate-400">In ogni momento è stabilita una sola direzione di trasmissione. Richiede un sistema di segnalazione (es. Radio CB).</p>
-                </div>
-                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
-                    <h4 class="font-bold text-indigo-400 mb-1">Full-Duplex (Bidirezionale simultanea)</h4>
-                    <p class="text-xs text-slate-400">I dati viaggiano in entrambe le direzioni contemporaneamente (es. conversazione telefonica).</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sezione 3: Modelli ISO/OSI e TCP/IP -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                <span>📚</span> Modelli a Strati nella Rete
-            </h2>
+        Klient- urządzenie korzystający z usługi udostępnione przez serwera 
+        
+        Serwer - komputer który udostępnia zasoby lub usługi w sieci
+        
+        - Rodzaje środowisk sieciowych :
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-5 bg-dark-900/60 rounded-xl border border-slate-800 space-y-3">
-                    <h3 class="font-bold text-white text-lg">Modello ISO/OSI (7 Strati)</h3>
-                    <p class="text-xs text-slate-400">Ogni strato comunica con il proprio strato adiacente. I livelli superiori offrono servizi ai livelli inferiori.</p>
-                    <ul class="space-y-1 text-sm text-slate-300">
-                        <li>7. <strong>Applicazione</strong> (Browser, client email)</li>
-                        <li>6. <strong>Presentazione</strong> (Formattazione standard, compressione, crittografia)</li>
-                        <li>5. <strong>Sessione</strong> (Gestione della comunicazione e ripristino connessione)</li>
-                        <li>4. <strong>Trasporto</strong> (Segmentazione, affidabilità, ritrasmissione)</li>
-                        <li>3. <strong>Rete</strong> (Indirizzamento logico IP e routing dei pacchetti)</li>
-                        <li>2. <strong>Collegamento dati</strong> (Framing, controllo errori CRC, indirizzi MAC. Diviso in LLC e MAC)</li>
-                        <li>1. <strong>Fisico</strong> (Trasmissione bit su cavo o onde radio)</li>
-                    </ul>
-                </div>
-
-                <div class="p-5 bg-dark-900/60 rounded-xl border border-slate-800 space-y-3">
-                    <h3 class="font-bold text-white text-lg">Modello TCP/IP (4 Strati)</h3>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li>1. <strong>Applicazione</strong> (Include le funzioni di Applicazione, Presentazione e Sessione del modello ISO/OSI)</li>
-                        <li>2. <strong>Trasporto</strong></li>
-                        <li>3. <strong>Internet</strong></li>
-                        <li>4. <strong>Accesso alla rete</strong></li>
-                    </ul>
-                    <p class="text-xs text-slate-400 pt-2">Nota: Il processo di suddivisione dei dati in unità e aggiunta dei vari header si chiama <strong>Incapsulamento</strong>, mentre il processo inverso è la <strong>Decapsulamento</strong>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sezione 4: Struttura del frame -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                <span>📦</span> Struttura del Frame Ethernet
-            </h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm text-slate-300 border-collapse">
-                    <thead>
-                        <tr class="border-b border-slate-700 text-indigo-300">
-                            <th class="p-3">Nome campo</th>
-                            <th class="p-3">Dimensione (Byte)</th>
-                            <th class="p-3">Descrizione</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-800">
-                        <tr><td class="p-3 font-medium">Preambolo</td><td class="p-3">7</td><td class="p-3 text-slate-400">Alternanza di 1 e 0 per la rapida sincronizzazione dei ricevitori.</td></tr>
-                        <tr><td class="p-3 font-medium">SFD (Start Frame Delimiter)</td><td class="p-3">1</td><td class="p-3 text-slate-400">Marcatore di inizio del frame.</td></tr>
-                        <tr><td class="p-3 font-medium">MAC Destinazione</td><td class="p-3">6</td><td class="p-3 text-slate-400">Indirizzo MAC del ricevente.</td></tr>
-                        <tr><td class="p-3 font-medium">MAC Mittente</td><td class="p-3">6</td><td class="p-3 text-slate-400">Indirizzo MAC del mittente.</td></tr>
-                        <tr><td class="p-3 font-medium">Tipo / Lunghezza</td><td class="p-3">2</td><td class="p-3 text-slate-400">Se &lt; 1500 indica la lunghezza; se &gt; 1500 indica il tipo di pacchetto.</td></tr>
-                        <tr><td class="p-3 font-medium">Dati e Riempimento</td><td class="p-3">46 - 1500</td><td class="p-3 text-slate-400">Dati trasmessi (se &lt; 46 B vengono riempiti di zeri).</td></tr>
-                        <tr><td class="p-3 font-medium">FCS (Somma di controllo)</td><td class="p-3">4</td><td class="p-3 text-slate-400">Permette di rilevare errori di trasmissione.</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Sezione 5: Cablaggio e Standard TIA/EIA -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                <span>🔌</span> Standard TIA/EIA 568 e Cablaggio
-            </h2>
-            <p class="text-slate-300">Il mezzo trasmissivo più comune è la coppia intrecciata (skrętka). La sequenza dei cavi nei connettori segue gli standard:</p>
+            -W architekturze **równorzędnej** (**peer-to-peer**)każdy użytkownik może jednocześnie udostępniać zasoby swojego komputera oraz korzystać z zasobów innych komputerów . Wszystkie urządzenia w sieci mają taki sam status - żadne z nich nie jest podporządkowane  innemu . Użytkownik sam zarządza swoim komputerem i dba o dostęp innych użytkowników do swoich zasobów . Stosowane jest do małych sieciach.
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
-                    <h3 class="font-bold text-indigo-400 mb-2">TIA/EIA 568A</h3>
-                    <ol class="list-decimal list-inside text-sm text-slate-300 space-y-1">
-                        <li>Bianco-Verde</li>
-                        <li>Verde</li>
-                        <li>Bianco-Arancione</li>
-                        <li>Blu</li>
-                        <li>Bianco-Blu</li>
-                        <li>Arancione</li>
-                        <li>Bianco-Marrone</li>
-                        <li>Marrone</li>
-                    </ol>
-                </div>
-                <div class="p-4 bg-dark-900/60 rounded-xl border border-slate-800">
-                    <h3 class="font-bold text-indigo-400 mb-2">TIA/EIA 568B</h3>
-                    <ol class="list-decimal list-inside text-sm text-slate-300 space-y-1">
-                        <li>Bianco-Arancione</li>
-                        <li>Arancione</li>
-                        <li>Bianco-Verde</li>
-                        <li>Blu</li>
-                        <li>Bianco-Blu</li>
-                        <li>Verde</li>
-                        <li>Bianco-Marrone</li>
-                        <li>Marrone</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="space-y-3 pt-2 text-slate-300">
-                <p><strong>Cavo Diretto (Prosty):</strong> I connettori su entrambe le estremità sono realizzati secondo lo stesso standard. Viene utilizzato per collegare dispositivi di tipo diverso.</p>
-                <p><strong>Cavo Krosowany (Crossover):</strong> Un connettore è realizzato secondo lo standard TIA/EIA 568A e l'altro secondo lo standard 568B. Viene utilizzato per collegare dispositivi dello stesso tipo.</p>
-                <p class="text-sm text-slate-400"><em>Nota:</em> La maggior parte dei dispositivi di rete moderni è dotata di funzione <strong>Auto MDI/MDIX</strong>, che riconosce automaticamente se è collegato un cavo diritto o incrociato.</p>
-            </div>
-        </section>
-
-        <!-- Sezione 6: Indirizzamento IP e Subnetting -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                <span>🔢</span> Indirizzamento IP e Subnetting
-            </h2>
-            <div class="space-y-4 text-slate-300">
-                <p><strong>Esempio:</strong> 192.168.0.1 / 24</p>
-                <ul class="list-disc list-inside text-sm space-y-2 text-slate-400">
-                    <li>Quantità di host = $2^{32-\text{MASKA}} - 2 \rightarrow 2^{32-24} - 2 = 2^8 - 2 = 254$</li>
-                    <li>Indirizzo di Rete = Indirizzo IP AND Maschera</li>
-                    <li>Indirizzo Broadcast = Indirizzo di Rete + Inverso della Maschera (es. 192.168.0.255)</li>
-                    <li>Primo host = Indirizzo di rete + 1 (192.168.0.1)</li>
-                    <li>Ultimo host = Indirizzo broadcast - 1 (192.168.0.254)</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Sezione 7: Protocolli -->
-        <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-2xl font-bold text-indigo-400 flex items-center gap-2">
-                <span>⚙️</span> Protocolli di Livello Applicativo e di Rete
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
-                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>FTP:</strong> Protocollo per il trasferimento di file in rete</div>
-                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>HTTP:</strong> Protocollo per il download di pagine WWW</div>
-                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>SMTP:</strong> Protocollo per l'invio di posta elettronica</div>
-                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>POP3 / IMAP:</strong> Protocolli per la ricezione di posta elettronica</div>
-                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>DNS:</strong> Protocollo per la risoluzione dei nomi di dominio in indirizzi IP</div>
-                <div class="p-3 bg-dark-900/40 rounded-lg"><strong>TFTP:</strong> Versione semplificata di FTP usata per l'installazione di sistemi su dispositivi di rete</div>
-            </div>
-
-            <h3 class="text-xl font-semibold text-white pt-4">Protocolli di Rete e Routing:</h3>
-            <div class="space-y-3 text-sm text-slate-300">
-                <p><strong>Protokół IP:</strong> Responsabile dell'invio dei pacchetti tra gli utenti della rete, è un protocollo senza connessione e non affidabile (non garantisce la consegna, i pacchetti possono perdersi o danneggiarsi).</p>
-                <p><strong>TTL (Time To Live):</strong> Definisce il tempo massimo di permanenza del pacchetto in rete. Ogni passaggio attraverso un router riduce il valore TTL di 1. Quando raggiunge lo zero, il pacchetto viene eliminato (massimo 255 router).</p>
-                <p><strong>RIP, OSPF e IGRP:</strong> Protocolli di routing per calcolare la rotta ottimale e aggiornare le tabelle di routing.</p>
-                <p><strong>ICMP:</strong> Strettamente legato al protocollo IP, senza connessione. I comandi principali sono <strong>PING</strong> (per diagnosticare la qualità del collegamento misurando pacchetti persi e tempo di trasmissione) e <strong>TRACERT</strong> (per tracciare il percorso dei pacchetti).</p>
-            </div>
-        </section>
-
-        <!-- Footer dell'articolo -->
-        <div class="pt-8 border-t border-slate-800 flex justify-between items-center">
-            <a href="index.html" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold transition-colors">
-                &larr; Torna alla Home e agli altri articoli
-            </a>
-            <span class="text-xs text-slate-500">Forgs-IT Hub Didattico</span>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark-900 border-t border-slate-800/80 mt-20 py-8 px-4 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 Forgs-IT Hub. Tutti i diritti riservati.</p>
-    </footer>
-
-</body>
-</html>
+            -W architekturze **klient-serwer** istnieje jeden komputer lub więcej spełniających tylko funkcje serwera . Na serwerze jest zainstalowany sieciowy system operacyjny, umożliwiający realizację zadań serwera . Serwer przechowuje i udostępnia zasoby np. w postaci plików, zarządza współdzieleniem drukarek itp. Stacja robocza, pełniąca funkcje klienta , komunikuje się z serwerem , korzystając z oprogramowania klienta sieci.
+            
+- Komunikacja w sieci
+    - Komunikacja w sieci.
+        
+        1.Protokół komunikacyjnym - to zbiór zasad i norm który muszą przestrzegać urządzenia komunikujący  się ze sobą.
+        
+        2.Tryb połączeniowy - polega na ustanowieniu logicznego połączenia między dwoma komunikującymi się ze sobą urządzeniami . Z trybu połączeniowego korzysta się wtedy, gdy powstaje potrzeba przesyłania wielu komunikatów w obu kierunkach .
+        
+        3.Tryb bezpołączeniowy - komunikaty są przekazywany niezależne np. poprzez wysyłanie poczty e-mail. Aby komunikaty zostały przesyłany urządzenia nie muszą być on-line.
+        
+        4.Transmisja jednostkowa(UNICAST)- w przypadku tej transmisji jedno urządzenie wysyła dane do dokładnie jednego urządzenia.
+        
+        5.BRODCAST(tryb rozgłoszeniowy ) - dane wysyłany przez nadawcę docierają do wielu urządzeń, ale są odbierany tylko przez urządzenie którego adres jest adresem docelowym pozostały urządzenia ignorują danych , który nie są przeznaczony dla nich .
+        
+        6.Rozgłaszanie grupowy(MULTICAST)- dane są przeznaczony tylko dla wybrany grupy      urządzeń. Adres docelowy jest specjalnym adresem określającym wybrane urządzenia z  danej sieci.W transmisji grupowej unika się wielokrotnego wysyłania tego samego komunikatu do wielu nadawców.
+        
+        1. Transmisja jednokierunkowa (SIMPLEX) to transmisja , w której odbiornik nie może przesłać odpowiedzi ani innych danych. Przykładem tego typu transmisji jest audycja w radiu.
+        
+          8. Pół-duplex(HALF-DUPLEX) - to transmisja dwukierunkowa naprzemienna . W danym momencie jest ustalony tylko jeden kierunek transmisji . Do  odwrócenia kierunku transmisji jest potrzebny system sygnalizacji, wskazujący , że urządzenie ukończyło nadawanie i może odbierać informacje, przykładem może być RADIO CB   . 
+        
+        9.Duplex - transmisja dwukierunkowa jednoczesna np. rozmowa telefoniczna 
+        
+- Model ISO/OSI
+    1. Aplikacja 
+    2. Prezentacja
+    3. Sesji 
+    4. Transportu 
+    5. Sieci
+    6. Łącza danych
+    7. Fizyczna
+    
+    Według  modelu ISO/OSI wyróżniamy 7 warstw . Każda warstwa komu0,kuje się z warstwą z bezpośredni sąsiedztwie .
+    
+    Warstwy wyższe korzystają z usług warstw niższych, a warstwy niższe świadczą świadczą usługi na rzecz warstw wyższych. Trzy warstw górne (aplikacja, prezentacja i sesji ) zapewniają współpracy z oprogramowaniem realizującym zadania użytkownika .
+    
+    1. Aplikacja : Świadczy usługi końcowe dla aplikacji np. przeglądarka WWW, klient Poczty elektronicznej . W architekturze klient-serwer zarówno klient jak i serwer działają w warstwie aplikacji. 
+        1. Warstwa prezentacji przetwarza dane które pochodzą z warstwy aplikacji do postaci standardowej , której wymagają warstwy niższe, kiedy dane docierają z warstwej niższej , warstwa prezentacji tłumacze je na format zgodnej z warstwą aplikacji . Innym zadaniem warstwy prezentacji jest również kompresja i szyfrowanie danych 
+    2. Warstwa sesji - zarządza przebiegiem komunikacji podczas połączenia pomiędzy dwoma komputerami, warstwa sesji nadzoruje połączenie i kontroluje która aplikacja łącze się z inną. W przypadku przerwania połączenia jest   ono nawiązywany ponownie. Warstwa sesij ustala również kierunek transmisji gwarantuje wykonanie wcześniejszego zadania przed przyjęciem kolejnego. 
+    
+    Zadanie ich niższych warstw jest transmisja danych. Zajmują się one w odnalezieniem najlepszej drogi do miejsca przekonania konkretnych informacji. Sane dzielone są na odpowiedniej do danej warstwy jednostki danych PDU(Protocol Data Unit).
+    
+    1. Warstwa transportu- przesyła wiadomości kanałem stworzonym przez warstwę sesji są dzielony na segmenty które są kolejno wysyłany do stacji docelowej. W przypadku zaginięcia lub uszkodzenia segmentu można żądni retransmisji, stacja docelowa może również wysłać potwierdzenie odebrania segmentu . 
+    2. Warstwa sieci - jako jedyna dysponuje wiedzą dotyczącą fizycznej topologii sieci. Rozpoznaje jakie trasy łączą poszczególne komputery oraz sieci, i na tej podstawie decyduje którą trasy wybrać. Jednostką danych w warstwie sieciowej jest pakiet. Warstwa ta odpowiada ponad to za adresowanie logiczne węzłów w sieci (np. Adres IP)
+    3. Warstwa łącza danych - nadzoruje warstwę fizyczną i steruje fizyczną wymiana bitów. Ma możliwość zmiany parametrów warstwy fizycznej tak aby obniżyć liczbę pojawiających się błędów. Warstwa łącza danych definiuje **mechanizmy kontroli błędów (CRC)**  i zapewni dostarczanie ramek informacji do odpowiedni węzłów w sieci na podstawie adresu MAC. Warstwa łącza danych dzieli się na dwie podwarstwie : 
+        1. LLC (Logical Link Control) jest to podwarstwa sterowania łączem danych, która kontroluje poprawność transmisji i obsługuje tworzenie ramek. 
+        2. MAC(Media Access Control) jest to podwarstwa sterowania dostępem do nośnika, zapewnia dostęp do nośnika sieci lokalnej i współpracuje z warstwą fizyczną.
+    4. Warstwa fizyczna - odpowiada dla wysyłanie strumienia bitów, bez kontroli ruchu i bez uwzględnienia rodzaju informacji. Określa ona wszystkie składniki sieci niezbędne do obsługi elektrycznego, optycznego oraz radiowego wysyłania i  odbierania sygnałów. Ustala sposób przesyłania bitów i odległości przerw między nimi .     
+    
+    Proces podział strumienia danych na jednostki danych i opatrywanie ich nagłówkami nazywamy **enkapsulacją**.
+    
+    Proces odwrotny realizowanie podczas odbierania informacji i przesyłania ich do górnych warstw nazywany **dekapsulacją**
+    
+- Model TCP/IP
+    1. Aplikacja(obejmujący funkcje Aplikacji, Prezentacja, Sesja w modelu ISO/OSI) 
+    2. Transportu 
+    3. Internetowa 
+    4. Dostępu do sieci 
+- Protokoły warstwy łącza danych
+    
+    1. Budowa ramki 
+    
+    | **Nazwa pola** | **Rozmiar pola (w bajtach)** |
+    | --- | --- |
+    | Preambuła | 7 |
+    | Znacznik początku ramki | 1 |
+    | Adres MAC odbiorcy | 6 |
+    | Adres MAC nadawcy | 6 |
+    | Długość/typ | 2 |
+    | Dane i wypełnienie | 46 - 1500  |
+    | FCS | 4 |
+    
+    a)Preambuła to 7 bajtów złożonych znak przemienny 1 i 0 pozwalający na szybką synchronizację odbiorników.
+    
+    b)SFD- to znacznik początku ramki 
+    
+    c) Adres MAC odbiorcy
+    
+    d)Adres MAC nadawcy
+    
+    e)Typ bramki /długość, jeżeli jego wartość to mniejsza niż 1500 to oznacza długość ramki, jeżeli większa  niż 1500 to typ pakietu 
+    
+    f) Przesyłany danych , jeżeli dany są mniejsze od 46 B to są uzupełniany zerami.
+    
+    g) Suma kontrolna FCS - pozwala na wykrycie błędów transmisji . W sieci Ethernet każda stacja widzi wszystkie przepływający ramki danych i sprawdza czy przypływająca ramka nie jest adresowana do niej . 
+    
+    Najpopularniejszym medium transmisyjny stosowany w budowie sieci to skrętka. Kolejność przewodu we wtyków jest określona za pomocą standardu TIA/EIA 568A lub TIA/EIA 568B .
+    
+       TIA/EIA 568A 
+    
+       A)Biało-zielony
+    
+       B)Zielony
+    
+       C)Biało-pomarańczowy
+    
+       D)Niebieski
+    
+             B)Pomarańczowy
+    
+       E)Biało-niebieski
+    
+       F)Pomarańczowy
+    
+      G)Biało-brązowy
+    
+      H)Brązowy
+    
+    TIA/EIA 568B
+    
+             A)Biało-pomarańczowy
+    
+             C)Biało-zielony
+    
+             D)Niebieski
+    
+             E)Biało-niebieski
+    
+             F)Zielony
+    
+            G)Biało-brązowy
+    
+            H)Brązowy
+    
+    Dołączenia urządzeń są stosowany dwa rodzaje kabli :
+    
+    - prosty- wtyki na obu końca są wykonany wg. jednego standardu. Kabel jest stosowany do łączenia urządzeń różnego typu .
+    - Kabel krosowany - wtyk na jednym końcu jest wykonany wg. standardu TIA/EIA 568A na drugim wg. standardu TIA/EIA 568B . Kabel krosowany jest stosowany do łączenia urządzeń tego samego typu.
+    
+    Większość nowoczesny 88HH urządzeń sieciowych jest wyposażony na auto MDI/MDIX.  Funkcja ta polega na automatycznym rozpoznaniu przez urządzenie czy jest podłączony kablem prostym czy krosowanym .
+    
+- Adresowanie IP
+    
+    ## Przykład
+    
+    192.168.0.1 / 24
+    
+    A = 11000000.10101000.00000000.00000001
+    
+    M= 11111111.11111111.11111111.00000000
+    
+    Ilość hostów = $2^{32-MASKA}-2$
+    
+    Ilość hostów = $2^{32-24}-2=2^8-2=254$
+    
+    Adres sieci = Adres * maska
+    
+        A = 11000000.10101000.00000000.00000001
+    
+     ^ M= 11111111.11111111.11111111.00000000
+    
+                                 =
+    
+                11000000.10101000.00000000.000000000
+    
+    Adres rozgłoszeniowy = Adres sieci + odwrotność maski 
+    
+    Adres rozgłoszeniowy = 
+    
+                             11000000.10101000.00000000.00000000
+    
+                                                         +
+    
+                             00000000.00000000.00000000.11111111
+    
+                                                        = 
+    
+                                 192.168.0.0 + 0 . 0 . 0 . 255  = 192.168.0.255
+    
+    Teraz : 
+    
+    Host1 = adres sieci i 1 czyli = 192.168.0.1
+    
+    Host ost.  = adres rozgłoszeniowy -1  czyli. = 192.168.0.254
+    
+- Podział sieci na podsieci
+    
+    ### Przykład :
+    
+    - Adres IP : 231.255.254.200
+    - Podsieci :
+        - 6/29(maska raczej nie będzie podana dlatego musimy znaleźć sami w tym przypadku : 29 bo 32-29 = 3 , czyli 2^3= 8)
+        - 14/28(tutaj 32- 28 = 4, czyli 2^4= 16 )
+        - 1000/22(tutaj 32-22 = 10, czyli 2^10 = 1024)
+        - 32/26(32-26 = 8 czyli = 2^8 = 256)
+        
+        Zaczynamy zawsze od największy , czyli : 
+        
+        - (4)6/29
+        - (3)14/28
+        - (1)1000/22
+        - (2)32/26
+        1. $A_{s_{1}} = 231.255.257.0$ , ponieważ mamy maską 22 bitowa czyli zaczynamy od 3 częśći . 
+            
+            $A_{R_{1}} = 231.255.260.255$ , jeśli nie pamiętasz adres rozgłoszeniowe = adres sieci + odwrotność maski 
+            
+        2. $A_{s_{2}}= 231.255.261.0$ , ponieważ adres sieci 2 = adres rogłoszeniowe 1 + 1 
+            
+            $A_{R_{2}}= 231.255.261.63$ ,  jeśli nie pamiętasz adres rozgłoszeniowe = adres sieci + odwrotność maski(w tym przypadku 26 bitowe )
+            
+        3. $A_{s_{3}} = 231.255.261.64$, ponieważ adres sieci 3 = adres rogłoszeniowe 2 + 1 
+            
+            $A_{R_{3}}= 231.255.261.79$ ,  jeśli nie pamiętasz adres rozgłoszeniowe = adres sieci + odwrotność maski(w tym przypadku 28 bitowe )
+            
+        4. $A_{s_{4}}= 231.255.261.80$, chyba wiesz czemu teraz. 
+        5. $A_{R_{4}}= 231.255.261.87$, to samo co w 3 . 
+- Protokoły warstwy aplikacji
+    1. Najczęściej używany protokoły warstwy aplikacji : 
+        1. FTP - to protokół służący do przesyłania plików w sieci 
+        2. HTTP- to protokół służący do pobierania stroń WWW
+        3. SMTP -  to protokół służący do wysyłania poczty elektronicznej
+        4. POP3 - to protokół służący do pobierania poczty elektronicznej 
+        5. IMAP - to protokół służący do pobierania poczty elektronicznej 
+        6. DNS - to protokół który odpowiada za zmianę nazwy domenowej na adres IP 
+        7. TFTP - to uproszczona wersja protokół FTP wykorzystywana  np. Do instalacji systemów operacyjnych na urządzenia sieciowych
+- Protokoły warstwy sieci
+    1. Protokół IP - jest odpowiedzialny za przesyłanie pakietów między użytkownikami sieci, jest protokołem bezpołączeniowym. IP jest protokołem zawodnym. Nie ma gwarancji dostarczenia pakietów wysyłani przez się, po drodzy mogą zostać zagubiony lub uszkodzony .
+    
+      Znaczenie wybrany kul główka IP: 
+    
+    - Czas życia TTL- określa maksymalny czas przebywania pakietów w sieci. Każdy przejście przez router obniża wartość TTL o 1. Kiedy wartość osiągnie 0 pakiet jest skasowany . Maksymalna wartość tego pola wynosi 255, oznacza to że na trasie pakietów nie może być więcej niż 255 routerów.
+    - Adres źródłowy to adres IP nadawcy pakietów
+    - Adres docelowy to adres IP odbiorcy pakietów
+    
+    Zadanie warstwy sieciowej jest wybranie optymalniej trasy po jakiej będzie przesyłany każdy pakiet. Trasa jest wybierana na podstawie informacji zawarty w tablicy routingu. 
+    
+    1. Protokoły routingu : 
+        1. RIP - to protokół bram wewnętrznych oparty na zestawie algorytmów wektorowych, służących do obliczania najlepszej trasy do celu 
+        2. Protokół OSPF jest najczęściej używany  protokołów routing w nowoczesnych sieciach. Protokół ten ma w celu określenia najlepszej ścieżki dla pakietów danych i odpowiedniej aktualizacji tablic routingu. 
+        3. Protokół IGRP jest używany do trasowania wewnątrz systemu autonomicznego. 
+    2. Protokół ICMP jest ściśle powiązany z protokołem IP, jest bezpołączeniowy, nie ma mechanizmów informowania o błędach. Najczęściej wykorzystywanymi poleceniami protokół ICMP jest polecenie PING oraz TRACERT. Pierwszy z poleceń służy do diagnozowania połączeń sieciowy, pozwala na określenie jakości połączenia przez pomiar liczby zgubiony pakietów i czasu potrzebnego na ich transmisje. PING wysyła pakiety żądania echa i odbiera odpowiedzi na żądanie echa i ICMP. Jako argument dla polecenia PING należy podać adres IP lub nazwę domenową. Aktualnie większość programów typu firewall blokuje proces odpowiedzi polecenie pracy wykorzystywany jest do wyznaczenia trasy wysyłając pierwszy pakiet echo z wartością czasu TTL równą 1 i zwiększając tą wartość o 1 przy każdej transmisji aż do osiągnięcia punktu docelowego.
