@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgs-IT | Appunti, Articoli e Riconoscimenti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#030712',
+                            900: '#0b0f19',
+                            800: '#111827',
+                            700: '#1f2937',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white">
+
+    <nav class="sticky top-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-tr from-indigo-600 to-violet-500 text-white p-2 rounded-xl font-extrabold text-lg tracking-wider shadow-lg shadow-indigo-500/20">
+                        F/IT
+                    </div>
+                    <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                        Forgs-IT
+                    </span>
+                </div>
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+                    <a href="#home" class="hover:text-indigo-400 transition-colors">Home</a>
+                    <a href="#articoli" class="hover:text-indigo-400 transition-colors">Articoli</a>
+                    <a href="#riconoscimenti" class="hover:text-indigo-400 transition-colors">Riconoscimenti</a>
+                    <a href="#contatti" class="hover:text-indigo-400 transition-colors">Contatti</a>
+                </div>
+                <!-- Action Button -->
+                <div>
+                    <a href="#articoli" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-lg shadow-indigo-600/20">
+                        Esplora Appunti
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.1)_0,transparent_70%)] pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+            <span class="inline-flex items-center gap-2 bg-indigo-500/10 text-indigo-400 text-xs font-semibold px-3.5 py-1.5 rounded-full border border-indigo-500/20">
+                ✨ Hub Didattico & Risorse Informatiche
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                Studio, Codice e <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Innovazione</span>.
+            </h1>
+            <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+                Benvenuti nel portale ispirato a Forgs-IT. Trova appunti dettagliati divisi per materie, guide tecniche e traguardi raggiunti nel percorso di studio.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="#articoli" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 py-3 rounded-xl transition-all shadow-lg shadow-indigo-600/25">
+                    Vai agli Articoli 📚
+                </a>
+                <a href="#riconoscimenti" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium px-6 py-3 rounded-xl border border-slate-700 transition-all">
+                    Vedi Riconoscimenti 🏆
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+        <section id="articoli" class="space-y-10">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Articoli & Appunti per Materia</h2>
+                <p class="text-slate-400">Seleziona una categoria per esplorare le guide e gli appunti di lezione.</p>
+            </div>
+
+            <!-- Categoria 1: Reti e Telecomunicazioni -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                    <span class="text-2xl">🌐</span>
+                    <h3 class="text-xl font-bold text-indigo-400">Reti e Telecomunicazioni</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card Articolo 1 (I tuoi appunti tradotti!) -->
+                    <article class="glass-card rounded-2xl p-6 transition-all duration-300 glow-effect flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-indigo-500/20">Reti</span>
+                                <span class="text-slate-500 text-xs">Aggiornato</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white">Lezioni dopo le vacanze: Architetture, Protocolli e Modelli</h4>
+                            <p class="text-slate-400 text-sm">Appunti completi su Client-Server, Peer-to-Peer, modalità di trasmissione, modelli OSI/TCP-IP, cavi e domini di collisione.</p>
+                        </div>
+                        <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Lettura: 8 min</span>
+                            <a href="network_notes.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+                                Leggi appunti &rarr;
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Card Articolo Extra Reti -->
+                    <article class="glass-card rounded-2xl p-6 transition-all duration-300 glow-effect flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-indigo-500/20">Routing</span>
+                                <span class="text-slate-500 text-xs">Approfondimento</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white">Indirizzamento IP e Subnetting Pratico</h4>
+                            <p class="text-slate-400 text-sm">Guida rapida al calcolo delle sottoreti IPv4, maschere di sottorete e gateway predefiniti.</p>
+                        </div>
+                        <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Lettura: 6 min</span>
+                            <span class="text-sm font-semibold text-slate-500 cursor-not-allowed">Prossimamente</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Categoria 2: Sistemi Operativi -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                    <span class="text-2xl">💻</span>
+                    <h3 class="text-xl font-bold text-indigo-400">Sistemi Operativi</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="glass-card rounded-2xl p-6 transition-all duration-300 glow-effect flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-violet-500/10 text-violet-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-violet-500/20">Linux</span>
+                                <span class="text-slate-500 text-xs">Shell</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white">Comandi essenziali di Linux e permessi</h4>
+                            <p class="text-slate-400 text-sm">Panoramica sui comandi da terminale, gestione degli utenti, permessi chmod e gestione dei processi.</p>
+                        </div>
+                        <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Lettura: 5 min</span>
+                            <span class="text-sm font-semibold text-slate-500 cursor-not-allowed">Prossimamente</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Categoria 3: Programmazione e Web -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                    <span class="text-2xl">⚡</span>
+                    <h3 class="text-xl font-bold text-indigo-400">Programmazione & Web</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="glass-card rounded-2xl p-6 transition-all duration-300 glow-effect flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-blue-500/10 text-blue-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-blue-500/20">HTML/CSS</span>
+                                <span class="text-slate-500 text-xs">Frontend</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-white">Creare layout moderni con Tailwind CSS</h4>
+                            <p class="text-slate-400 text-sm">Guida introduttiva all'utilizzo delle classi utility-first per creare interfacce web responsive e pulite.</p>
+                        </div>
+                        <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Lettura: 7 min</span>
+                            <span class="text-sm font-semibold text-slate-500 cursor-not-allowed">Prossimamente</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="riconoscimenti" class="space-y-10 pt-10 border-t border-slate-900">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Riconoscimenti & Certificazioni</h2>
+                <p class="text-slate-400">Traguardi, attestati e riconoscimenti ottenuti nel percorso formativo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Award Card 1 -->
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group hover:border-indigo-500/40 transition-all">
+                    <div class="absolute top-0 right-0 p-4 text-3xl opacity-20 group-hover:opacity-100 transition-opacity">🏆</div>
+                    <div class="space-y-3">
+                        <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded border border-indigo-500/20">Certificazione</span>
+                        <h3 class="text-lg font-bold text-white">Networking Fundamentals</h3>
+                        <p class="text-slate-400 text-sm">Completamento con successo dei moduli avanzati di architettura delle reti e configurazione dei dispositivi.</p>
+                    </div>
+                </div>
+
+                <!-- Award Card 2 -->
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group hover:border-indigo-500/40 transition-all">
+                    <div class="absolute top-0 right-0 p-4 text-3xl opacity-20 group-hover:opacity-100 transition-opacity">🥇</div>
+                    <div class="space-y-3">
+                        <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2.5 py-1 rounded border border-violet-500/20">Hackathon & Progetti</span>
+                        <h3 class="text-lg font-bold text-white">Miglior Hub Didattico Open Source</h3>
+                        <p class="text-slate-400 text-sm">Riconoscimento per la condivisione di appunti scolastici chiari, accessibili e open source ispirati a Forgs-IT.</p>
+                    </div>
+                </div>
+
+                <!-- Award Card 3 -->
+                <div class="glass-card rounded-2xl p-6 relative overflow-hidden group hover:border-indigo-500/40 transition-all">
+                    <div class="absolute top-0 right-0 p-4 text-3xl opacity-20 group-hover:opacity-100 transition-opacity">🌟</div>
+                    <div class="space-y-3">
+                        <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/20">Community</span>
+                        <h3 class="text-lg font-bold text-white">Contributore Attivo</h3>
+                        <p class="text-slate-400 text-sm">Impegno costante nella stesura e traduzione di documentazione tecnica per studenti di informatica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contatti" class="bg-dark-900 border-t border-slate-800/80 mt-20 py-12 px-4 sm:px-6 lg:px-8 text-center text-slate-400 text-sm space-y-4">
+        <div class="flex items-center justify-center space-x-3">
+            <div class="bg-indigo-600 text-white font-extrabold text-sm px-2.5 py-1 rounded-lg">F/IT</div>
+            <span class="font-semibold text-white tracking-wide">Forgs-IT Inspired Hub</span>
+        </div>
+        <p>Creato con passione per facilitare lo studio delle materie tecniche e di rete.</p>
+        <p class="text-xs text-slate-600">&copy; 2026 Forgs-IT Hub. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>
